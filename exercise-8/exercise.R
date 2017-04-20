@@ -11,26 +11,27 @@ library(dplyr)
 
 # View in the data set. Start to understand what the data columns contains
 # Be sure to comment out the function so it won't view everytime you run the code.
-
+View(pulitzer)
 
 # Use 'colnames' to print out the names of the columns
-
+ `colnames<-`(pulitzer)
 
 # Use 'str' to print what types of values are contained in each column
 # Did any value type surprise you? Why do you think they are that type?
-
+str(pulitzer)
 
 # Add a column in a dataframe called 'Pulitzer.Prize.Change` that contains the diffrence in changes
 # in Pulitzer Prize Winners from 2004 to 2013 and Pultizer Prize Winners from 1990 to 2003.
-
-
+pulitizer <-mutate(pulitizer, Pulitizer.Prize.Change = Pulitizer.Prize.Winners.and.Finalists...2004.2014-Pulitizer.Prize.Winners.and.Finalists)
 # What publication gained the most pulitzer prizes from 2004-2014?
 # Be sure to use the pipe operator! 
-
-
+most.gained <- filter(pulitzer, Pulitizer.Prize.Winners.and.Finalists...2004.2014 == max(Pulitizer.Prize.Winners.and.Finalists...2004.2014))
+most.gained$Newspaper
 # Which publication with at least 5 Pulitzers won from 2004-2014 had the biggest decrease(negative) in Daily circulation numbers? 
-# This publication should have Pulitzer prizes won a minimum of 5 Pulitzers, as well as the biggest decrease in circulation
-
+# This publication should have Pulitzer prizes won a minimum of 5 Pulitzers, as well as the biggest decrease in circulation)
+most.award.winning.scores <- pulitizer %>% filter(Pulitizer.Prize.Winners.and.Finalists...2004.2014 >=5) %>%(Change.In.Daily.Circulation...2004.2014) %>%
+  select(Newspaper)
+most.award.winning.scores
 
 # Your turn! An important part about being a data scientist is asking questions. 
 # Create a question and use dplyr to figure out the answer.  
